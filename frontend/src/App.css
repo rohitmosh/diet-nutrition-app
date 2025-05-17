@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #1f6c03;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #1f6c03;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+  border: 1px solid #1f6c03;
+}
+
+.navbar li {
+  flex: 1 1 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Add vertical line between each tab except the last */
+.navbar li:not(:last-child) {
+  border-right: 2px solid #e0e0e0;
+}
+
+/* Rectangular tab style for links */
+.navbar a {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: #267e05;
+  border: none;
+  border-radius: 0;
+  transition: background 0.2s, box-shadow 0.2s;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: #53aa57;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Logout button with depth */
+.navbar a {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  background: #267e05;
+  border: none;
+  border-radius: 0;
+  transition: background 0.2s, box-shadow 0.2s;
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+.logout-btn {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
+  background: #267e05;
+  color: #fff;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  margin: 0;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.20), 0 1.5px 4px 0 rgba(255,62,62,0.15);
+  transition: background 0.2s, transform 0.2s;
+  height: 100%;
+}
+
+.logout-btn:hover {
+  background: #d32f2f;
+  transform: translateY(-2px) scale(1.04);
+}
+
+.login-container, .register-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-container form, .register-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="email"], input[type="password"], input[type="text"], input[type="number"], select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #1f6c03;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #007bff;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f0f0;
+}
