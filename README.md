@@ -1,12 +1,164 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🏥 Health Care Management System for Personalized Diet and Nutrition
 
-Currently, two official plugins are available:
+A full-stack **Database Management System (DBMS)** project designed to help users manage and track diet, nutrition, exercise, appointments, and health goals. It features intelligent data processing using MySQL and a clean, fast frontend powered by **React + Vite**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> Built using **React + Vite**, **Node.js (Express)** for backend API, and **MySQL Server** as the database engine.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Table of Contents
+
+- [🎯 Project Objectives](#-project-objectives)
+- [💡 Features](#-features)
+- [🧱 Database Schema](#-database-schema)
+- [📐 Architecture Overview](#-architecture-overview)
+- [🔐 Security & Constraints](#-security--constraints)
+- [⚙️ Tech Stack](#️-tech-stack)
+- [🚀 Installation & Setup](#-installation--setup)
+- [🧪 Testing & Validation](#-testing--validation)
+- [📄 Future Enhancements](#-future-enhancements)
+- [👥 Author](#-author)
+
+---
+
+## 🎯 Project Objectives
+
+This system aims to:
+
+- Enable real-time updates of health and user profiles.
+- Generate personalized diet plans based on BMI, goals, and medical history.
+- Track meals, calories, exercise, and provide recommendations.
+- Schedule and manage appointments with dieticians.
+- Analyze health progress using SQL-driven reports.
+
+---
+
+## 💡 Features
+
+- 🔁 **Dynamic BMI and Health Profile Calculation**
+- 🥗 **Personalized Diet Plan Generation**
+- 🧾 **Meal & Calorie Logging**
+- 🏃 **Exercise & Activity Tracking**
+- 🗓️ **Appointment Scheduling**
+- 📈 **Goal Tracking & Progress Reports**
+- ⚠️ **Alert Triggers for Unhealthy Logs**
+- 💬 **Role-based Access (Admin, Patient)**
+
+---
+
+## 🧱 Database Schema
+
+### 🔑 Users Table
+- `UserID`, `Name`, `Email`, `Password`, `Height`, `Weight`, `BMI`, `MedicalHistoryID`
+
+### 🔐 Credentials
+- `CredentialID`, `Email`, `PasswordHash`, `Role (admin/patient)`, `UserID`
+
+### 🗓️ Appointments
+- `AppointmentID`, `Date`, `Time`, `UserID`, `DieticianID`
+
+### 👩‍⚕️ Dieticians
+- `DieticianID`, `Name`, `Specialization`
+
+### 📋 Diet Plans & Meals
+- `DietPlanID`, `PlanName`, `Description`, `UserID`, `NutritionalGoal`
+- `Meals`: `MealID`, `MealName`, `Calories`, `NutritionalValue`, `Type (Veg/Non-Veg)`
+- `DietPlanMeals`: `DietPlanID`, `MealID`
+
+### 🍱 Meal Logs
+- `MealLogID`, `Date`, `MealType`, `CalorieIntake`, `UserID`, `MealID`
+
+### 🏃 Exercise Logs
+- `ExerciseLogID`, `Date`, `ActivityType`, `Duration`, `CaloriesBurned`, `UserID`
+
+### 🎯 User Goals
+- `GoalID`, `UserID`, `DailyCalorieLimit`, `NutritionalGoal`
+
+---
+
+## 📐 Architecture Overview
+
+- **Frontend**: Built with React + Vite, using hooks and context API for clean state management.
+- **Backend**: Node.js with Express to handle RESTful APIs for user management, diet planning, appointments, and logs.
+- **Database**: MySQL relational schema with normalized tables, foreign keys, triggers, and stored procedures.
+
+---
+
+## 🔐 Security & Constraints
+
+- Role-based access using `enum('admin', 'patient')`
+- All sensitive actions are gated via token/session logic (JWT recommended)
+- Referential integrity ensured using foreign key constraints
+- Triggers can be used to:
+  - Auto-calculate BMI
+  - Alert on unhealthy food patterns
+  - Prevent appointment conflicts
+
+---
+
+## ⚙️ Tech Stack
+
+| Layer        | Tech                         |
+|--------------|------------------------------|
+| Frontend     | React + Vite, Tailwind CSS   |
+| Backend      | Node.js + Express            |
+| Database     | MySQL Server                 |
+| Auth (suggested) | JWT / bcrypt for hashing  |
+| Hosting (suggested) | Railway / Vercel / Render |
+
+---
+
+## 🚀 Installation & Setup
+
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/your-username/healthcare-dbms.git
+   cd healthcare-dbms
+   ```
+
+2. **Backend Setup**
+   ```bash
+   cd backend
+   npm install
+   # Set DB credentials in `.env`
+   npm run dev
+   ```
+
+3. **Frontend Setup**
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+4. **MySQL Setup**
+   - Create the database:
+     ```sql
+     CREATE DATABASE healthcare_db;
+     ```
+   - Run schema scripts from `/sql/schema.sql` to set up tables and constraints.
+
+---
+
+## 🧪 Testing & Validation
+
+- Unit tests with `Jest` for backend logic.
+- SQL trigger testing via `INSERT` simulations.
+- BMI trigger, appointment scheduler, meal tracking tested manually.
+
+---
+
+## 📄 Future Enhancements
+
+- 🌍 Multilingual frontend
+- 📱 Mobile version (React Native)
+- 📤 Export reports to PDF, CSV, JSON
+- 📊 Charts with Chart.js or Recharts
+- 🧠 AI-driven meal recommendations
+
+---
+
+## 👥 Author
+
+- **Rohit Mohanty**
