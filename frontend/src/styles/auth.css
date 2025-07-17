@@ -52,3 +52,44 @@
   outline: none;
   box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
 }
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.auth-link p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.auth-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+.auth-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.auth-title-link:hover h2 {
+  color: var(--primary-dark);
+}

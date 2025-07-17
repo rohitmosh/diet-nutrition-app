@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       <header className="dashboard-header">
         <div className="logo">
-          <h2>Healthcare Admin</h2>
+          <h2>NutriTrack Admin Portal</h2>
         </div>
         <div className="user-info">
           <span>Welcome, {user?.name || 'Admin'}</span>

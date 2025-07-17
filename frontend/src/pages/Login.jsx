@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { authService } from '../services/api';
 import Button from '../components/common/Button';
 import '../styles/auth.css';
@@ -61,7 +61,7 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-form">
-        <h2>Healthcare Management System</h2>
+        <Link to="/" className="auth-title-link"><h2>NutriTrack</h2></Link>
         <h3>Login to Your Account</h3>
         
         {error && <div className="error-message">{error}</div>}
@@ -93,6 +93,10 @@ const Login = () => {
             {loading ? 'Logging in...' : 'Login'}
           </Button>
         </form>
+
+        <div className="auth-link">
+          <p>Don't have an account? <Link to="/register">Register here</Link></p>
+        </div>
       </div>
     </div>
   );
