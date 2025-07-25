@@ -142,7 +142,7 @@ export default function MealLogging() {
       <div className="patient-dashboard">
         <header className="dashboard-header">
           <div className="logo">
-            <h2>Healthcare Patient Portal</h2>
+            <h2>NutriTrack Home Portal</h2>
           </div>
           <div className="user-info">
             <span>Meal Logging</span>
@@ -162,7 +162,7 @@ export default function MealLogging() {
     <div className="patient-dashboard">
       <header className="dashboard-header">
         <div className="logo">
-          <h2>Healthcare Patient Portal</h2>
+          <h2>NutriTrack Home Portal</h2>
         </div>
         <div className="user-info">
           <span>Meal Logging</span>

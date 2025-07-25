@@ -3,16 +3,25 @@
 .landing-page {
   min-height: 100vh;
   /* Fallback for browsers without CSS custom properties */
-  background: line
+  background: linear-gradient(135deg, #4a90e2 0%, #3a73b6 100%);
+  background: linear-gradient(135deg, var(--primary-color, #4a90e2) 0%, var(--primary-dark, #3a73b6) 100%);
+}
 
 /* Hero Section */
 .hero-section {
-  padding: var(--spacing-xxl) var(--spacing-lg);
+  /* Fallbacks for browsers without CSS custom properties */
+  padding: 3rem 1.5rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4a90e2 0%, #3a73b6 100%);
+  
+  /* Modern browsers with CSS custom properties */
+  padding: var(--spacing-xxl, 3rem) var(--spacing-lg, 1.5rem);
+  color: var(--white, #ffffff);
+  background: linear-gradient(135deg, var(--primary-color, #4a90e2) 0%, var(--primary-dark, #3a73b6) 100%);
+  
   min-height: 90vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: var(--white);
   position: relative;
   overflow: hidden;
 }
@@ -33,7 +42,9 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xxl);
+  /* Fallback for browsers without CSS custom properties */
+  gap: 3rem;
+  gap: var(--spacing-xxl, 3rem);
   align-items: center;
   position: relative;
   z-index: 1;
@@ -43,7 +54,9 @@
   font-size: 3.5rem;
   font-weight: 700;
   line-height: 1.2;
-  margin-bottom: var(--spacing-lg);
+  /* Fallback for browsers without CSS custom properties */
+  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg, 1.5rem);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,22 +68,32 @@
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.6;
-  margin-bottom: var(--spacing-xl);
+  /* Fallback for browsers without CSS custom properties */
+  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-xl, 2rem);
   opacity: 0.9;
 }
 
 .hero-actions {
   display: flex;
-  gap: var(--spacing-lg);
+  /* Fallback for browsers without CSS custom properties */
+  gap: 1.5rem;
+  gap: var(--spacing-lg, 1.5rem);
   flex-wrap: wrap;
 }
 
 .hero-actions .btn {
-  padding: var(--spacing-md) var(--spacing-xl);
+  /* Fallbacks for browsers without CSS custom properties */
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  
+  /* Modern browsers with CSS custom properties */
+  padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+  border-radius: var(--border-radius-md, 6px);
+  
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: var(--border-radius-md);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -80,20 +103,37 @@
 
 .btn-outline {
   background: transparent;
-  color: var(--white);
-  border: 2px solid var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--white, #ffffff);
+  border: 2px solid var(--white, #ffffff);
 }
 
 .btn-outline:hover {
-  background: var(--white);
-  color: var(--primary-color);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #ffffff;
+  color: #4a90e2;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--white, #ffffff);
+  color: var(--primary-color, #4a90e2);
+  
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .hero-actions .btn-primary:hover {
-  background: var(--primary-light);
-  color: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #6ba5e7;
+  color: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--primary-light, #6ba5e7);
+  color: var(--white, #ffffff);
+  
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -107,8 +147,8 @@
 
 .hero-graphic {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 630px;
+  height: 630px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -117,8 +157,8 @@
 /* Food Orbital Animation */
 .food-orbit {
   position: absolute;
-  width: 220px;
-  height: 220px;
+  width: 462px;
+  height: 462px;
   border-radius: 50%;
   animation: rotate 10s linear infinite;
   will-change: transform;
@@ -126,7 +166,7 @@
 
 .food-item {
   position: absolute;
-  font-size: 2.5rem;
+  font-size: 4.2rem;
   animation: counter-rotate 10s linear infinite;
   will-change: transform;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
@@ -183,7 +223,7 @@
 
 /* Central nutrition icon */
 .nutrition-icon {
-  font-size: 4rem;
+  font-size: 6.72rem;
   z-index: 2;
   animation: pulse 3s ease-in-out infinite;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
@@ -229,8 +269,13 @@
 
 /* Features Section */
 .features-section {
-  padding: var(--spacing-xxl) var(--spacing-lg);
-  background: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  padding: 3rem 1.5rem;
+  background: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  padding: var(--spacing-xxl, 3rem) var(--spacing-lg, 1.5rem);
+  background: var(--white, #ffffff);
 }
 
 .container {
@@ -242,83 +287,139 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: var(--spacing-xxl);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #343a40;
+  margin-bottom: 3rem;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--heading-color, #343a40);
+  margin-bottom: var(--spacing-xxl, 3rem);
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-xl);
+  /* Fallback for browsers without CSS custom properties */
+  gap: 2rem;
+  gap: var(--spacing-xl, 2rem);
 }
 
 .feature-card {
-  background: var(--card-bg);
-  padding: var(--spacing-xl);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #dee2e6;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--card-bg, #ffffff);
+  padding: var(--spacing-xl, 2rem);
+  border-radius: var(--border-radius-lg, 8px);
+  box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+  border: 1px solid var(--border-color, #dee2e6);
+  
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid var(--border-color);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--primary-color);
+  /* Fallbacks for browsers without CSS custom properties */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: #4a90e2;
+  
+  /* Modern browsers with CSS custom properties */
+  box-shadow: var(--shadow-lg, 0 10px 15px rgba(0, 0, 0, 0.1));
+  border-color: var(--primary-color, #4a90e2);
 }
 
 .feature-icon {
   font-size: 3rem;
-  margin-bottom: var(--spacing-lg);
+  /* Fallback for browsers without CSS custom properties */
+  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-lg, 1.5rem);
   display: block;
 }
 
 .feature-card h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--heading-color);
-  margin-bottom: var(--spacing-md);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #343a40;
+  margin-bottom: 1rem;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--heading-color, #343a40);
+  margin-bottom: var(--spacing-md, 1rem);
 }
 
 .feature-card p {
-  color: var(--text-muted);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #6c757d;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--text-muted, #6c757d);
   line-height: 1.6;
 }
 
 /* CTA Section */
 .cta-section {
-  padding: var(--spacing-xxl) var(--spacing-lg);
-  background: linear-gradient(135deg, var(--light-gray) 0%, var(--medium-gray) 100%);
+  /* Fallbacks for browsers without CSS custom properties */
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  
+  /* Modern browsers with CSS custom properties */
+  padding: var(--spacing-xxl, 3rem) var(--spacing-lg, 1.5rem);
+  background: linear-gradient(135deg, var(--light-gray, #f8f9fa) 0%, var(--medium-gray, #e9ecef) 100%);
+  
   text-align: center;
 }
 
 .cta-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: var(--spacing-lg);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--heading-color, #343a40);
+  margin-bottom: var(--spacing-lg, 1.5rem);
 }
 
 .cta-content p {
   font-size: 1.25rem;
-  color: var(--text-muted);
-  margin-bottom: var(--spacing-xl);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #6c757d;
+  margin-bottom: 2rem;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--text-muted, #6c757d);
+  margin-bottom: var(--spacing-xl, 2rem);
 }
 
 .cta-actions {
   display: flex;
-  gap: var(--spacing-lg);
+  /* Fallback for browsers without CSS custom properties */
+  gap: 1.5rem;
+  gap: var(--spacing-lg, 1.5rem);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .cta-actions .btn {
-  padding: var(--spacing-md) var(--spacing-xl);
+  /* Fallbacks for browsers without CSS custom properties */
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  
+  /* Modern browsers with CSS custom properties */
+  padding: var(--spacing-md, 1rem) var(--spacing-xl, 2rem);
+  border-radius: var(--border-radius-md, 6px);
+  
   font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: var(--border-radius-md);
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -327,44 +428,76 @@
 }
 
 .btn-secondary {
-  background: var(--secondary-color);
-  color: var(--white);
-  border: 2px solid var(--secondary-color);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #6c757d;
+  color: #ffffff;
+  border: 2px solid #6c757d;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--secondary-color, #6c757d);
+  color: var(--white, #ffffff);
+  border: 2px solid var(--secondary-color, #6c757d);
 }
 
 .cta-actions .btn-primary:hover {
-  background: var(--primary-light);
-  color: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #6ba5e7;
+  color: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--primary-light, #6ba5e7);
+  color: var(--white, #ffffff);
+  
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .cta-actions .btn-secondary:hover {
-  background: var(--dark-gray);
-  border-color: var(--dark-gray);
-  color: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: #343a40;
+  border-color: #343a40;
+  color: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  background: var(--dark-gray, #343a40);
+  border-color: var(--dark-gray, #343a40);
+  color: var(--white, #ffffff);
+  
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
 .landing-footer {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: var(--white);
-  padding: var(--spacing-xxl) var(--spacing-lg) var(--spacing-lg);
+  /* Fallbacks for browsers without CSS custom properties */
+  background: linear-gradient(135deg, #4a90e2 0%, #3a73b6 100%);
+  color: #ffffff;
+  padding: 3rem 1.5rem 1.5rem;
+  
+  /* Modern browsers with CSS custom properties */
+  background: linear-gradient(135deg, var(--primary-color, #4a90e2) 0%, var(--primary-dark, #3a73b6) 100%);
+  color: var(--white, #ffffff);
+  padding: var(--spacing-xxl, 3rem) var(--spacing-lg, 1.5rem) var(--spacing-lg, 1.5rem);
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: var(--spacing-xxl);
-  margin-bottom: var(--spacing-xl);
+  /* Fallbacks for browsers without CSS custom properties */
+  gap: 3rem;
+  margin-bottom: 2rem;
+  
+  /* Modern browsers with CSS custom properties */
+  gap: var(--spacing-xxl, 3rem);
+  margin-bottom: var(--spacing-xl, 2rem);
 }
 
 .footer-brand h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  /* Fallback for browsers without CSS custom properties */
+  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
   color: #ffd700;
 }
 
@@ -375,14 +508,21 @@
 .footer-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--spacing-xl);
+  /* Fallback for browsers without CSS custom properties */
+  gap: 2rem;
+  gap: var(--spacing-xl, 2rem);
 }
 
 .footer-section h4 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: var(--spacing-md);
-  color: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  margin-bottom: 1rem;
+  color: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  margin-bottom: var(--spacing-md, 1rem);
+  color: var(--white, #ffffff);
 }
 
 .footer-section ul {
@@ -391,29 +531,94 @@
 }
 
 .footer-section li {
-  margin-bottom: var(--spacing-sm);
+  /* Fallback for browsers without CSS custom properties */
+  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-sm, 0.5rem);
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .footer-section li:hover {
-  color: var(--white);
+  /* Fallbacks for browsers without CSS custom properties */
+  color: #ffffff;
+  
+  /* Modern browsers with CSS custom properties */
+  color: var(--white, #ffffff);
 }
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: var(--spacing-lg);
+  /* Fallback for browsers without CSS custom properties */
+  padding-top: 1.5rem;
+  padding-top: var(--spacing-lg, 1.5rem);
   text-align: center;
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Performance Optimizations */
+.hero-actions .btn,
+.cta-actions .btn,
+.feature-card {
+  will-change: transform;
+}
+
+.hero-actions .btn:not(:hover),
+.cta-actions .btn:not(:hover),
+.feature-card:not(:hover) {
+  will-change: auto;
+}
+
 /* Responsive Design */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .hero-content {
+    /* Fallback for browsers without CSS custom properties */
+    gap: 2rem;
+    gap: var(--spacing-xl, 2rem);
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-graphic {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .food-orbit {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .nutrition-icon {
+    font-size: 3.5rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Tablets */
 @media (max-width: 768px) {
+  .hero-section {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 2rem 1rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-xl, 2rem) var(--spacing-md, 1rem);
+    min-height: 80vh;
+  }
+  
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: var(--spacing-xl);
+    /* Fallbacks for browsers without CSS custom properties */
+    gap: 2rem;
+    gap: var(--spacing-xl, 2rem);
   }
   
   .hero-title {
@@ -424,8 +629,36 @@
     font-size: 1.1rem;
   }
   
+  .hero-graphic {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .food-orbit {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .food-item {
+    font-size: 2rem;
+  }
+  
+  .nutrition-icon {
+    font-size: 3rem;
+  }
+  
+  .features-section,
+  .cta-section {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 2rem 1rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-xl, 2rem) var(--spacing-md, 1rem);
+  }
+  
   .features-grid {
     grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
   
   .footer-content {
@@ -443,5 +676,127 @@
   .cta-actions .btn {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .hero-section {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 1.5rem 0.75rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-sm, 0.75rem);
+    min-height: 70vh;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+    /* Fallbacks for browsers without CSS custom properties */
+    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md, 1rem);
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    /* Fallbacks for browsers without CSS custom properties */
+    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg, 1.5rem);
+  }
+  
+  .hero-graphic {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .food-orbit {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .food-item {
+    font-size: 1.5rem;
+  }
+  
+  .nutrition-icon {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .features-section,
+  .cta-section,
+  .landing-footer {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 1.5rem 0.75rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-lg, 1.5rem) var(--spacing-sm, 0.75rem);
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    /* Fallbacks for browsers without CSS custom properties */
+    gap: 1.5rem;
+    gap: var(--spacing-lg, 1.5rem);
+  }
+  
+  .feature-card {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 1.5rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-lg, 1.5rem);
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  
+  .hero-actions .btn,
+  .cta-actions .btn {
+    /* Fallbacks for browsers without CSS custom properties */
+    padding: 0.75rem 1.5rem;
+    
+    /* Modern browsers with CSS custom properties */
+    padding: var(--spacing-sm, 0.75rem) var(--spacing-lg, 1.5rem);
+    font-size: 1rem;
+    min-width: 120px;
+  }
+}
+
+/* High-resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-section::before {
+    background-size: 50px 50px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 60vh;
+  }
+  
+  .hero-content {
+    /* Fallbacks for browsers without CSS custom properties */
+    gap: 1.5rem;
+    gap: var(--spacing-lg, 1.5rem);
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  
+  .hero-graphic {
+    width: 180px;
+    height: 180px;
   }
 }
