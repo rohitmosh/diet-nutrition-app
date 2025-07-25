@@ -28,9 +28,16 @@ const LandingPage = () => {
           </div>
           <div className="hero-image">
             <div className="hero-graphic">
-              <div className="graphic-circle circle-1"></div>
-              <div className="graphic-circle circle-2"></div>
-              <div className="graphic-circle circle-3"></div>
+              <div className="food-orbit">
+                <div className="food-item">🍎</div>
+                <div className="food-item">🥕</div>
+                <div className="food-item">🥑</div>
+                <div className="food-item">🍇</div>
+                <div className="food-item">🌾</div>
+                <div className="food-item">🐟</div>
+                <div className="food-item">🥜</div>
+                <div className="food-item">🍊</div>
+              </div>
               <div className="nutrition-icon">🥗</div>
             </div>
           </div>
