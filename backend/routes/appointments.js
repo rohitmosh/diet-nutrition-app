@@ -3,14 +3,42 @@ const router = express.Router();
 const db = require('../config/db');
 const { protect } = require('../middleware/authMiddleware');
 
+// Hardcoded dieticians data for demonstration
+const hardcodedDieticians = [
+  {
+    DieticianID: 1,
+    Name: 'Dr. Anita Rao',
+    Specialization: 'Weight Loss'
+  },
+  {
+    DieticianID: 2,
+    Name: 'Dr. Ramesh Iyer',
+    Specialization: 'Diabetes'
+  },
+  {
+    DieticianID: 3,
+    Name: 'Dr. Sneha Jain',
+    Specialization: 'Sports Nutrition'
+  },
+  {
+    DieticianID: 4,
+    Name: 'Dr. Farhan Qureshi',
+    Specialization: 'Ketogenic Diet'
+  },
+  {
+    DieticianID: 5,
+    Name: 'Dr. Ishita Reddy',
+    Specialization: 'Gluten-Free Diet'
+  }
+];
+
 // Get all dieticians
 router.get('/dieticians', protect, async (req, res) => {
   try {
-    const [dieticians] = await db.execute('SELECT * FROM dieticians ORDER BY Name');
-    
+    // For demonstration: Use hardcoded data instead of database
     res.status(200).json({
       success: true,
-      dieticians
+      dieticians: hardcodedDieticians
     });
   } catch (error) {
     console.error('Error fetching dieticians:', error);

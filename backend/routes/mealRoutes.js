@@ -3,11 +3,35 @@ const router = express.Router();
 const { protect } = require('../middleware/authMiddleware');
 const db = require('../config/db');
 
+// Hardcoded meals data for demonstration
+const hardcodedMeals = [
+  { MealID: 1, MealName: 'Oats Bowl', Calories: 250, NutritionalValue: 'High Fiber', Type: 'Veg' },
+  { MealID: 2, MealName: 'Grilled Chicken', Calories: 400, NutritionalValue: 'High Protein', Type: 'Non-Veg' },
+  { MealID: 3, MealName: 'Fruit Salad', Calories: 180, NutritionalValue: 'Vitamins', Type: 'Veg' },
+  { MealID: 4, MealName: 'Veg Sandwich', Calories: 300, NutritionalValue: 'Balanced', Type: 'Veg' },
+  { MealID: 5, MealName: 'Paneer Wrap', Calories: 350, NutritionalValue: 'Protein Rich', Type: 'Veg' },
+  { MealID: 6, MealName: 'Smoothie', Calories: 220, NutritionalValue: 'Fruit Boost', Type: 'Veg' },
+  { MealID: 7, MealName: 'Boiled Eggs', Calories: 150, NutritionalValue: 'Protein', Type: 'Non-Veg' },
+  { MealID: 8, MealName: 'Rice & Dal', Calories: 450, NutritionalValue: 'Balanced', Type: 'Veg' },
+  { MealID: 9, MealName: 'Quinoa Salad', Calories: 320, NutritionalValue: 'Low Carb', Type: 'Veg' },
+  { MealID: 10, MealName: 'Tofu Stir Fry', Calories: 280, NutritionalValue: 'Low Fat', Type: 'Veg' },
+  { MealID: 11, MealName: 'Chicken Caesar', Calories: 390, NutritionalValue: 'Low Carb', Type: 'Non-Veg' },
+  { MealID: 12, MealName: 'Greek Yogurt', Calories: 120, NutritionalValue: 'Probiotic', Type: 'Veg' },
+  { MealID: 13, MealName: 'Tuna Salad', Calories: 350, NutritionalValue: 'High Protein', Type: 'Non-Veg' },
+  { MealID: 14, MealName: 'Lentil Soup', Calories: 230, NutritionalValue: 'High Fiber', Type: 'Veg' },
+  { MealID: 15, MealName: 'Avocado Toast', Calories: 310, NutritionalValue: 'Healthy Fat', Type: 'Veg' },
+  { MealID: 16, MealName: 'Spinach Omelette', Calories: 200, NutritionalValue: 'Iron Rich', Type: 'Non-Veg' },
+  { MealID: 17, MealName: 'Protein Shake', Calories: 180, NutritionalValue: 'Protein', Type: 'Veg' },
+  { MealID: 18, MealName: 'Chickpea Bowl', Calories: 330, NutritionalValue: 'Protein Rich', Type: 'Veg' },
+  { MealID: 19, MealName: 'Grilled Fish', Calories: 370, NutritionalValue: 'Omega 3', Type: 'Non-Veg' },
+  { MealID: 20, MealName: 'Veggie Wrap', Calories: 290, NutritionalValue: 'Balanced', Type: 'Veg' }
+];
+
 // Get all available meals
 router.get('/meals', protect, async (req, res) => {
   try {
-    const [meals] = await db.query('SELECT * FROM meals ORDER BY MealName');
-    res.json({ success: true, data: meals });
+    // For demonstration: Use hardcoded data instead of database
+    res.json({ success: true, data: hardcodedMeals });
   } catch (error) {
     console.error('Error fetching meals:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch meals' });
@@ -17,17 +41,9 @@ router.get('/meals', protect, async (req, res) => {
 // Get user's daily calorie limit
 router.get('/dailylimit', protect, async (req, res) => {
   try {
-    const userId = req.user.id;
-    const [goals] = await db.query(
-      'SELECT DailyCalorieLimit FROM usergoals WHERE UserID = ?',
-      [userId]
-    );
-    
-    if (goals.length === 0) {
-      return res.json({ success: true, data: { dailyLimit: 2000 } }); // Default value
-    }
-    
-    res.json({ success: true, data: { dailyLimit: goals[0].DailyCalorieLimit } });
+    // For demonstration: Use hardcoded daily calorie limit
+    const dailyLimit = 2000; // Default daily calorie limit for demo
+    res.json({ success: true, data: { dailyLimit } });
   } catch (error) {
     console.error('Error fetching daily limit:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch daily limit' });

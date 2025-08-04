@@ -6,7 +6,8 @@ const patientRoutes = require('./routes/patient');
 const appointmentsRoutes = require('./routes/appointments');
 const exerciseRoutes = require('./routes/exerciseRoutes');
 const mealRoutes = require('./routes/mealRoutes');
-const reportRoutes = require('./routes/reportRoutes'); 
+const reportRoutes = require('./routes/reportRoutes');
+const dietRoutes = require('./routes/dietRoutes');
 require('dotenv').config();
 
 const app = express();
@@ -21,9 +22,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/patient', patientRoutes);
 app.use('/api/appointments', appointmentsRoutes);
-app.use('/api/exercises', exerciseRoutes); 
+app.use('/api/exercises', exerciseRoutes);
 app.use('/api/meals', mealRoutes);
 app.use('/api/reports', reportRoutes);
+app.use('/api/diet', dietRoutes);
 
 
 // Test route

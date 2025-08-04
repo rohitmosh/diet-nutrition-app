@@ -1,11 +1,11 @@
 // dietRoutes.js
 const express = require('express');
 const router = express.Router();
-const dietController = require('../controllers/dietController');
-const { authenticateToken } = require('../middleware/auth');
+const dietController = require('../models/dietController');
+const { protect } = require('../middleware/authMiddleware');
 
 // Apply authentication middleware to all routes
-router.use(authenticateToken);
+router.use(protect);
 
 // Get available nutritional goals
 router.get('/nutritional-goals', dietController.getNutritionalGoals);
