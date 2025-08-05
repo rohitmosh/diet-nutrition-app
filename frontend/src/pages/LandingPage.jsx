@@ -73,7 +73,7 @@ const LandingPage = () => {
               <motion.div variants={fadeInUp} className="mb-6">
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-100 to-blue-100 text-green-800 text-sm font-medium mb-4">
                   <Zap className="w-4 h-4 mr-2" />
-                  Smart Nutrition Made Simple
+                  Transform Your Health Journey
                 </span>
               </motion.div>
 
@@ -81,26 +81,22 @@ const LandingPage = () => {
                 variants={fadeInUp}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
               >
-                Meet
+                Your all-in-one Smart Health Companion
                 <span className="block text-gradient-success font-display">
-                  NutriTrack
-                </span>
-                <span className="block text-3xl md:text-4xl lg:text-5xl font-normal text-gray-700 mt-2">
-                  Your AI Nutrition Coach
-                </span>
+                  NutriTrack.
+                </span> 
               </motion.h1>
 
               <motion.p
                 variants={fadeInUp}
                 className="text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl"
               >
-                Revolutionize your health with intelligent meal tracking, personalized insights,
-                and expert-backed nutrition guidance that adapts to your lifestyle.
+                Plan smarter, eat better, and track progress effortlessly — all in one app.
               </motion.p>
 
               <motion.div
                 variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-stretch"
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
               >
                 <Link
                   to="/register"
@@ -156,8 +152,9 @@ const LandingPage = () => {
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute inset-0"
                 >
+                  {/* Apple - Top (0 degrees) */}
                   <motion.div
-                    className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute -top-4 left-1/2 transform -translate-x-1/2 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, -8, 0, 8, 0],
                       x: [0, 4, 0, -4, 0]
@@ -170,8 +167,10 @@ const LandingPage = () => {
                   >
                     🍎
                   </motion.div>
+
+                  {/* Blueberries - Top Right (45 degrees) */}
                   <motion.div
-                    className="absolute top-1/8 right-1/4 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute top-6 right-6 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, 6, 0, -6, 0],
                       x: [0, -3, 0, 3, 0]
@@ -185,8 +184,10 @@ const LandingPage = () => {
                   >
                     🫐
                   </motion.div>
+
+                  {/* Broccoli - Right (90 degrees) */}
                   <motion.div
-                    className="absolute top-1/4 -right-2 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute top-1/2 -right-4 transform -translate-y-1/2 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, -10, 0, 10, 0],
                       x: [0, 2, 0, -2, 0]
@@ -200,8 +201,10 @@ const LandingPage = () => {
                   >
                     🥦
                   </motion.div>
+
+                  {/* Strawberry - Bottom Right (135 degrees) */}
                   <motion.div
-                    className="absolute top-5/8 right-1/4 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute bottom-6 right-6 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, 7, 0, -7, 0],
                       x: [0, -5, 0, 5, 0]
@@ -215,23 +218,10 @@ const LandingPage = () => {
                   >
                     🍓
                   </motion.div>
+
+                  {/* Banana - Bottom (180 degrees) */}
                   <motion.div
-                    className="absolute top-3/4 -right-2 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
-                    animate={{
-                      y: [0, -6, 0, 6, 0],
-                      x: [0, 3, 0, -3, 0]
-                    }}
-                    transition={{
-                      duration: 4.2,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 2
-                    }}
-                  >
-                    🥕
-                  </motion.div>
-                  <motion.div
-                    className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, 9, 0, -9, 0],
                       x: [0, -2, 0, 2, 0]
@@ -240,13 +230,34 @@ const LandingPage = () => {
                       duration: 3.6,
                       repeat: Infinity,
                       ease: "easeInOut",
+                      delay: 2
+                    }}
+                  >
+                    
+                    🍌
+                  </motion.div>
+
+                  {/* Orange - Bottom Left (225 degrees) */}
+                  <motion.div
+                    className="absolute bottom-6 left-6 text-5xl lg:text-6xl hover:scale-110 transition-transform"
+                    animate={{
+                      y: [0, -6, 0, 6, 0],
+                      x: [0, 3, 0, -3, 0]
+                    }}
+                    transition={{
+                      duration: 4.2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
                       delay: 2.5
                     }}
                   >
-                    🥑
+                    
+                    🍊
                   </motion.div>
+
+                  {/* Grapes - Left (270 degrees) */}
                   <motion.div
-                    className="absolute top-3/4 -left-2 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute top-1/2 -left-4 transform -translate-y-1/2 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, -5, 0, 5, 0],
                       x: [0, 4, 0, -4, 0]
@@ -260,8 +271,10 @@ const LandingPage = () => {
                   >
                     🍇
                   </motion.div>
+
+                  {/* Tomato - Top Left (315 degrees) */}
                   <motion.div
-                    className="absolute top-1/4 -left-2 transform -translate-y-1/2 text-6xl lg:text-7xl hover:scale-110 transition-transform"
+                    className="absolute top-6 left-6 text-5xl lg:text-6xl hover:scale-110 transition-transform"
                     animate={{
                       y: [0, 8, 0, -8, 0],
                       x: [0, -1, 0, 1, 0]
@@ -289,8 +302,8 @@ const LandingPage = () => {
                       <TrendingUp className="w-4 h-4 text-green-600 group-hover:scale-110 transition-transform" />
                     </div>
                     <div>
-                      <div className="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">98%</div>
-                      <div className="text-xs text-gray-500">Goal Achievement</div>
+                      <div className="text-sm font-semibold text-gray-900 group-hover:text-green-600 transition-colors">🌟 4.8/5</div>
+                      <div className="text-xs text-gray-500">Satisfaction Rate</div>
                     </div>
                   </div>
                 </motion.div>
