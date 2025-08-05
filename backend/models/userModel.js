@@ -4,18 +4,18 @@ const db = require('../config/db');
 const hardcodedUsers = [
   {
     UserID: 1,
-    Name: 'Admin One',
-    Email: 'adminone@gmail.com',
-    PasswordHash: 'adminpass123',
+    Name: 'AdminOne',
+    Email: 'admin@nutritrack.com',
+    PasswordHash: 'admin123',
     Role: 'admin',
     Height: 175,
     Weight: 70
   },
   {
     UserID: 2,
-    Name: 'Rohit M',
-    Email: 'rohitm@gmail.com',
-    PasswordHash: 'pass123',
+    Name: 'Rohit',
+    Email: 'rohit@nutritrack.com',
+    PasswordHash: 'patient123',
     Role: 'patient',
     Height: 180,
     Weight: 75

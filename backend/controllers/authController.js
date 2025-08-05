@@ -6,18 +6,18 @@ const userModel = require('../models/userModel');
 const validCredentials = [
   {
     UserID: 1,
-    Name: 'Admin One',
-    Email: 'adminone@gmail.com',
-    Password: 'adminpass123',
+    Name: 'AdminOne',
+    Email: 'admin@nutritrack.com',
+    Password: 'admin123',
     Role: 'admin',
     Height: 175,
     Weight: 70
   },
   {
     UserID: 2,
-    Name: 'Rohit M',
-    Email: 'rohitm@gmail.com',
-    Password: 'pass123',
+    Name: 'Rohit',
+    Email: 'rohit@nutritrack.com',
+    Password: 'patient123',
     Role: 'patient',
     Height: 180,
     Weight: 75
@@ -44,7 +44,7 @@ exports.login = async (req, res) => {
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid email or password'
+        message: 'Invalid credentials. Please check your email and password.'
       });
     }
 
