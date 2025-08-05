@@ -612,10 +612,10 @@ const LandingPage = () => {
           <div className="border-t border-gray-800 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-gray-400 text-sm">
-                &copy; 2024 NutriTrack. All rights reserved.
+                &copy; 2025 NutriTrack. All rights reserved.
               </p>
               <div className="flex items-center space-x-6 mt-4 md:mt-0">
-                <span className="text-gray-400 text-sm">Made with ❤️ for your health</span>
+                <span className="text-gray-400 text-sm">Crafted with care❤️ — for a healthier you</span>
               </div>
             </div>
           </div>
