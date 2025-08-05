@@ -11,9 +11,7 @@ import DietPlanning from './pages/DietPlanning';
 import AppointmentScheduling from './pages/AppointmentScheduling';
 import Reports from './pages/Reports';
 import ProtectedRoute from './components/ProtectedRoute';
-import './styles/app.css';
-import './styles/navigation.css';
-import './styles/patient.css';
+// CSS imports removed - now using Tailwind CSS from main.jsx
 
 function App() {
   return (
