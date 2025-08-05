@@ -3,8 +3,22 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [react({ 
-    include: /\.(mdx|js|jsx|ts|tsx)$/ 
+  plugins: [react({
+    include: /\.(mdx|js|jsx|ts|tsx)$/
   })],
-  
+  build: {
+    outDir: 'dist',
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
+  server: {
+    port: 3000,
+  },
+  preview: {
+    port: 3000,
+  },
 });
