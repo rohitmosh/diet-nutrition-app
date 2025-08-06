@@ -1,5 +1,5 @@
 
-# 🏥 Health Care Management System for Personalized Diet and Nutrition
+# 🏥 NutriTrack - Your Complete Smart Health Companion
 
 A full-stack **Database Management System (DBMS)** project designed to help users manage and track diet, nutrition, exercise, appointments, and health goals. It features intelligent data processing using MySQL and a clean, fast frontend powered by **React + Vite**.
 
