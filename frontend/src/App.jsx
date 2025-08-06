@@ -11,13 +11,12 @@ import DietPlanning from './pages/DietPlanning';
 import AppointmentScheduling from './pages/AppointmentScheduling';
 import Reports from './pages/Reports';
 import ProtectedRoute from './components/ProtectedRoute';
-import DemoBanner from './components/DemoBanner';
+
 // CSS imports removed - now using Tailwind CSS from main.jsx
 
 function App() {
   return (
     <div className="App">
-      <DemoBanner />
       <BrowserRouter>
         <Routes>
           {/* Public routes */}

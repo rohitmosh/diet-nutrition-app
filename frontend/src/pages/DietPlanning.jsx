@@ -9,7 +9,7 @@ import {
   CheckCircleIcon
 } from '@heroicons/react/24/outline';
 import NavigationBar from '../components/NavigationBar';
-import api from "../services/api";
+import { dietService } from "../services/api";
 
 // Animation variants
 const containerVariants = {
@@ -64,7 +64,7 @@ export default function DietPlanning() {
         
         // Try to get available nutritional goals
         try {
-          const nutritionalGoalsResponse = await api.get('/diet/nutritional-goals');
+          const nutritionalGoalsResponse = await dietService.getNutritionalGoals();
           if (nutritionalGoalsResponse.data && nutritionalGoalsResponse.data.length > 0) {
             setNutritionalGoalOptions(nutritionalGoalsResponse.data);
           }
@@ -72,10 +72,10 @@ export default function DietPlanning() {
           console.error('Error fetching nutritional goals:', err);
           // Keep using default options set above
         }
-        
+
         // Try to get user's current goal if exists
         try {
-          const userGoalResponse = await api.get('/diet/user-goal');
+          const userGoalResponse = await dietService.getUserGoal();
           if (userGoalResponse.data) {
             setUserGoal(userGoalResponse.data);
             setNutritionalGoal(userGoalResponse.data.nutritionalGoal);
@@ -103,12 +103,16 @@ export default function DietPlanning() {
       
       // Try to save the user's nutritional goal
       try {
-        const saveGoalResponse = await api.post('/diet/user-goal', {
+        const saveGoalResponse = await dietService.saveUserGoal({
           nutritionalGoal,
           exerciseLevel
         });
-        
-        setUserGoal(saveGoalResponse.data);
+
+        setUserGoal({
+          nutritionalGoal,
+          exerciseLevel,
+          dailyCalorieLimit: exerciseLevel === 'Low' ? 1800 : (exerciseLevel === 'Medium' ? 2200 : 2600)
+        });
       } catch (err) {
         console.error('Error saving user goal:', err);
         // Create a fallback user goal object if the API call fails
@@ -118,10 +122,10 @@ export default function DietPlanning() {
           dailyCalorieLimit: exerciseLevel === 'Low' ? 1800 : (exerciseLevel === 'Medium' ? 2200 : 2600)
         });
       }
-      
+
       // Try to get recommended meals or provide demo data if API fails
       try {
-        const mealsResponse = await api.get(`/diet/recommended-meals?nutritionalGoal=${nutritionalGoal}&exerciseLevel=${exerciseLevel}`);
+        const mealsResponse = await dietService.getRecommendedMeals(nutritionalGoal, exerciseLevel);
         setRecommendedMeals(mealsResponse.data);
       } catch (err) {
         console.error('Error fetching meals:', err);
